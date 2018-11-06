@@ -10,27 +10,30 @@ ua = UserAgent()
 ua.chrome
 
 #sets proxy via user input
-print("Copy and paste your proxy in the following format:")
-proxy = input("address:port (Requires IP verification through your proxy provider. Just press enter to continue without a proxy.) ")
-print(proxy)
-os.environ['http_proxy'] = proxy 
-os.environ['HTTP_PROXY'] = proxy
-os.environ['https_proxy'] = proxy
-os.environ['HTTPS_PROXY'] = proxy
-
-#double checking your proxy is in place
-#safety precaution as accidentally using the wrong ip once on insta could get you banned
-print("Your current IP is:")
-htmlfile = urllib.request.urlopen("http://v6.ipv6-test.com/api/myip.php")
-htmltext = htmlfile.read()
-ip = "colored.clickselect".encode()
-print(htmltext)
-ip_confirm = input("Double check it . Continue with this? y / n ")
-if ip_confirm != "y":
-    input("Change your proxy then.")
-    sys.exit()
+proxyyn = input("Using a proxy? y / n ")
+if proxyyn == "n":
+    print("No proxy being applied.")
 else:
     print("Continuing")
+    proxy = input("address:port (Requires IP verification through your proxy provider. Just press enter to continue without a proxy.) ")
+    print(proxy)
+    os.environ['http_proxy'] = proxy 
+    os.environ['HTTP_PROXY'] = proxy
+    os.environ['https_proxy'] = proxy
+    os.environ['HTTPS_PROXY'] = proxy
+    #double checking your proxy is in place
+    #safety precaution as accidentally using the wrong ip once on insta could get you banned
+    print("Your current IP is:")
+    htmlfile = urllib.request.urlopen("http://v6.ipv6-test.com/api/myip.php")
+    htmltext = htmlfile.read()
+    ip = "colored.clickselect".encode()
+    print(htmltext)
+    ip_confirm = input("Double check it . Continue with this? y / n ")
+    if ip_confirm != "y":
+        input("Change your proxy then.")
+        sys.exit()
+    else:
+        print("Continuing")
 
 def ask_for_info():
     """
