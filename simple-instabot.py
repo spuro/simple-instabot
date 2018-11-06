@@ -11,7 +11,7 @@ ua.chrome
 
 #sets proxy via user input
 print("Copy and paste your proxy in the following format:")
-proxy = input("address:port (requires IP verification through your proxy provider. Just press enter to continue without a proxy. ")
+proxy = input("address:port (Requires IP verification through your proxy provider. Just press enter to continue without a proxy.) ")
 print(proxy)
 os.environ['http_proxy'] = proxy 
 os.environ['HTTP_PROXY'] = proxy
