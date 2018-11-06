@@ -14,7 +14,7 @@ proxyyn = input("Using a proxy? y / n ")
 if proxyyn == "n":
     print("No proxy being applied.")
 else:
-    print("Continuing")
+    print("Copy and paste your proxy in the following format:")
     proxy = input("address:port (Requires IP verification through your proxy provider. Just press enter to continue without a proxy.) ")
     print(proxy)
     os.environ['http_proxy'] = proxy 
